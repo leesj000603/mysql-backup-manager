@@ -66,6 +66,9 @@ docker exec -i "$CONTAINER_NAME" mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$DAT
 echo "데이터가 성공적으로 삽입되었습니다."
 ```
 
+![image](https://github.com/user-attachments/assets/9f321835-2a0f-4836-9e79-eb84a1fa834e)
+
+
 ### 테이블 생성
 ```sql
 CREATE TABLE table1 ( column1 VARCHAR(255), column2 VARCHAR(255) );
@@ -82,9 +85,19 @@ mysql> select * from table1;
 ```
 
 ## 🚀 컨테이너 삭제 및 재생성
-```bash
+```
 docker-compose down
+ docker-compose down
+[+] Running 2/2
+ ✔ Container mysql_database      Removed                               1.2s 
+ ✔ Network step06misson_default  Rem...                                0.2s
+
 docker-compose up
+[+] Running 2/1
+ ✔ Network step06misson_default  Created                                    0.1s 
+ ✔ Container mysql_database      Created                                    0.0s 
+Attaching to mysql_database
+...
 ```
 
 ### 재생성 후 데이터 확인
@@ -126,3 +139,6 @@ docker exec mysql_database sh -c "tar czf - /var/lib/mysql" > path/mysql_backup_
 ├── cron.log
 └── docker-compose.yml
 ```
+
+![image](https://github.com/user-attachments/assets/c4131cff-903a-434d-962a-712fd684409f)
+

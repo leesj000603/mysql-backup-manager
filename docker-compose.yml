@@ -1,0 +1,11 @@
+services:
+  db1:
+    image: mysql:latest
+    container_name: mysql_database
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: database1
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data: # DB가 사용할 볼륨
